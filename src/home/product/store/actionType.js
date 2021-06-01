@@ -1,0 +1,11 @@
+export const DSC_CHANGE = '/home/product/DSC_CHANGE';
+export const PICURL_CHANGE = '/home/product/TYPEURL_CHANGE';
+export const TITLE_CHANGE = '/home/product/title';
+export const CHANGE_PD1 = '/home/product/CHANGE_PD1';
+export const CHANGE_PD2 = '/home/product/CHANGE_PD2';
+export const CHANGE_PD3 = '/home/product/CHANGE_PD3';
+export const PRICE_CHANGE = '/home/product/PRICE_CHANGE';
+export const NUM_CHANGE = '/home/product/NUM_CHANGE';
+export const NUMBER1_CHANGE = '/home/product/NUMBER1_CHANGE';
+export const NUMBER2_CHANGE = '/home/product/NUMBER2_CHANGE';
+export const NUMBER3_CHANGE = '/home/product/NUMBER3_CHANGE';

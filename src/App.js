@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{ useEffect, useState } from 'react';
+import { Provider } from 'react-redux';
+import store from './store/index.js';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './home/index';
+import About from './about/index';
+import Head from './common/head/index';
+import Login from './login/index.js';
+import Register from './register/index.js';
+import ClockLoader from 'react-spinners/ClockLoader';
+
 
 function App() {
+  const [Loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      setLoading(true);
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
+        }
+    , []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store = { store }>
+    { 
+    Loading?<ClockLoader css = {{margin:700}} color = {"#969696"} size = {140} loading = {Loading}/>:    
+    <BrowserRouter>
+          <div>
+            <Head/>
+            <Route path = '/About' exact component = { About }></Route>
+            <Route path = '/' exact component = { Home }></Route>
+            <Route path = '/Login' exact component = {Login}></Route>
+            <Route path = '/Register' exact component ={Register}></Route>
+          </div>
+      </BrowserRouter>
+    }  
+    </Provider>
   );
 }
 

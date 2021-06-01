@@ -1,0 +1,1 @@
+export const USERNEAME_SET = '/login/USERNEAME_SET';
